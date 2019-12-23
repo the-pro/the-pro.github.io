@@ -1,0 +1,29 @@
+#y{
+    position: relative;
+    top:10px;
+    background-color:42d67b63;
+    margin-left:10%
+    margin-right:10%
+    padding:10px;
+}
+table{
+    border-style: solid;
+    width:80%;
+    border-collapse: collapse;
+    margin-left:10%;
+    margin-right:10%;
+    background-color:#42d67b63;
+}
+th,td{
+    border-style:solid;
+    padding:20px;
+}
+img{
+    border-radius: 50%;
+}
+#total{
+    padding:20px;
+    margin-left:10%;
+    margin-right:10%;
+    background-color: rgba(35, 141, 190, 0.151);
+}
