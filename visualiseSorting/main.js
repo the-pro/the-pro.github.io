@@ -36,7 +36,7 @@ $(document).ready(function(){
 
     // Event : on change of array size---------------------------------
     document.getElementById("rg").oninput = function() {
-        delay=1000/document.getElementById("rg").value;
+        delay=(1000/document.getElementById("rg").value)*2;
         generateNewArray(document.getElementById("rg").value);
     };
     // Event : on change of array size---------------------------------
@@ -59,25 +59,26 @@ $(document).ready(function(){
             bsort__out = setTimeout(function () {
             function myLoop () {           
                bsort_out = setTimeout(function () {
+                   var f=i-1;
+                    $("#b"+i).css("background-color","rgb(47, 119, 191)");
+                    $("#b"+f).css("background-color","rgb(47, 119, 191)");
                     if(array_bars[i]>array_bars[i+1]){
                         var id=i+1;
-                        $("#b"+i).css("height",2*array_bars[i+1]);$("#b"+i);
-                        $("#b"+id).css("height",2*array_bars[i]);$("#b"+i);
+                        $("#b"+i).css("height",2*array_bars[i+1]);
+                        $("#b"+id).css("height",2*array_bars[i]);
                         var x=array_bars[i];
                         array_bars[i]=array_bars[i+1];
                         array_bars[i+1]=x;
-                        //  $("#b"+i).css("background-color","green");
-                        //  $("#b"+id).css("background-color","green");
 
-                    }     
+                    }
+                    $("#b"+i).css("background-color","red");
+                    $("#b"+id).css("background-color","red");
                     i++;                     
-                    if (i < number_of_bars-1) {            
+                    if (i < number_of_bars+1) {            
                         myLoop();              
                     }                        
                 }, delay);
-                // $("#b"+i).css("background-color","red");
-                // $("#b"+id).css("background-color","red");
-            }
+            }   
                 myLoop();
                 j++;
                 if(j<number_of_bars){
@@ -98,6 +99,11 @@ $(document).ready(function(){
             function myLoop () {
                csort_out = setTimeout(function () {
                    if(j%2==0){
+                    // var f=number_of_bars-2-i,g=number_of_bars-i-1;
+                    // $("#b"+g).css("background-color","rgb(47, 119, 191)");
+                    // $("#b"+f).css("background-color","rgb(47, 119, 191)");
+                    // $("#b"+i).css("background-color","red");
+                    // $("#b"+id).css("background-color","red");
                     if(array_bars[i]>array_bars[i+1]){
                         var id=i+1;
                         $("#b"+i).css("height",2*array_bars[i+1]);$("#b"+i);
@@ -105,12 +111,15 @@ $(document).ready(function(){
                         var x=array_bars[i];
                         array_bars[i]=array_bars[i+1];
                         array_bars[i+1]=x;
-                        //  $("#b"+i).css("background-color","green");
-                        //  $("#b"+id).css("background-color","green");
 
                     }
                 }
                 else{
+                    // var f=i-1,g=i,s=number_of_bars-1-i,v=number_of_bars-i+1-1;
+                    // $("#b"+g).css("background-color","rgb(47, 119, 191)");
+                    // $("#b"+f).css("background-color","rgb(47, 119, 191)");
+                    // $("#b"+s).css("background-color","red");
+                    // $("#b"+v).css("background-color","red");
                     if(array_bars[number_of_bars-i-1]>array_bars[number_of_bars-i-1+1]){
                         var id=number_of_bars-i+1-1;
                         var ih=number_of_bars-i-1;
@@ -119,8 +128,6 @@ $(document).ready(function(){
                         var x=array_bars[number_of_bars-i-1];
                         array_bars[number_of_bars-i-1]=array_bars[number_of_bars-i+1-1];
                         array_bars[number_of_bars-i+1-1]=x;
-                        //  $("#b"+i).css("background-color","green");
-                        //  $("#b"+id).css("background-color","green");
 
                     }
                 }
@@ -130,8 +137,6 @@ $(document).ready(function(){
                         myLoop();              
                     }                        
                 }, delay);
-                // $("#b"+i).css("background-color","red");
-                // $("#b"+id).css("background-color","red");
             }
                 myLoop();
                 j++;
