@@ -59,10 +59,14 @@ $(document).ready(function(){
             bsort__out = setTimeout(function () {
             function myLoop () {           
                bsort_out = setTimeout(function () {
-                   var f=i-1;
+                   var f=i-1,g=i-2,h=i-3,v=i;
                     $("#b"+i).css("background-color","rgb(47, 119, 191)");
                     $("#b"+f).css("background-color","rgb(47, 119, 191)");
-                    if(array_bars[i]>array_bars[i+1]){
+                    // $("#b"+g).css("background-color","rgb(47, 119, 191)");
+                    // $("#b"+h).css("background-color","rgb(47, 119, 191)");
+                    // $("#b"+v).css("background-color","rgb(47, 119, 191)");
+
+                    if(array_bars[i]>array_bars[i+1] && i<number_of_bars-1){
                         var id=i+1;
                         $("#b"+i).css("height",2*array_bars[i+1]);
                         $("#b"+id).css("height",2*array_bars[i]);
@@ -72,7 +76,7 @@ $(document).ready(function(){
 
                     }
                     $("#b"+i).css("background-color","red");
-                    $("#b"+id).css("background-color","red");
+                    $("#b"+id).css("background-color","green");
                     i++;                     
                     if (i < number_of_bars+1) {            
                         myLoop();              
