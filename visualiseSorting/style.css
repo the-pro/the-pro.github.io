@@ -16,10 +16,10 @@ body{
     padding-right: 10px;*/
     background-color: rgb(47, 119, 191);
     border:1px solid black;
-    border-top: 20%;
+    border-top: 25%;
 }
 .tbars{
-    width:800px;
+    width:900px;
     position: absolute;
     left:18%;
 }

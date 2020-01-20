@@ -19,7 +19,7 @@ $(document).ready(function(){
         $(".bars").remove();
         for(var i=0;i<m;i++){
             array_bars[i]=Math.floor((Math.random() * 200) + 10);
-            var w=(800-2*m)/m;
+            var w=(900-2*m)/m;
             $(".sortBars").after("<div id=\"b"+i+"\" class=\"bars\" style=\"height:"+array_bars[i]*2+";width:"+w+"\"></div>");
         }
     }
