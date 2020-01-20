@@ -34,17 +34,19 @@ body{
     font-family: fantasy;
     padding:20px;
     color:white;
-    font-size: large;
+    font-size: x-large;
 
 }
 .ft{
     float:left;
     padding:5px;
+    font-size: large;
 }
 .ft:hover{
     float:left;
     padding:5px;
     color:rgba(204, 0, 255, 0.904);
+    font-size: large;
 }
 .bt{
     background-color: #1F4F7F;
@@ -53,7 +55,7 @@ body{
 }
 .h{
     text-align: center;
-    font-size: x-large;
+    font-size: xx-large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:#1F4F7F;
 }
