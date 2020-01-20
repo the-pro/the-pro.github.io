@@ -9,7 +9,7 @@ table{
     border-collapse: collapse;
     margin-left:10%;
     margin-right:10%;
-    background-color:#f8f400d8;
+    background-color:rgba(229, 255, 0, 0.952);
     font-size: large;
 }
 th,td{
@@ -31,6 +31,7 @@ img{
     background-color: rgba(17, 139, 196, 0.425);
     color:white;
     font-family: fantasy;
+    border:2px black solid;
 }
 nav{
     font-family: fantasy;
