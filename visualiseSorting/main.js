@@ -82,8 +82,6 @@ $(document).ready(function(){
                         myLoop();              
                     }                        
                 }, delay);
-                var v=number_of_bars-j;
-                $("#b"+v).css("background-color","rgba(204, 0, 255, 0.904)");
             }   
                 myLoop();
                 j++;
