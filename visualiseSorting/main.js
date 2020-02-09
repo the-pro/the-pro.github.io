@@ -7,6 +7,7 @@ $(document).ready(function(){
     var bsort__out;
     var csort_out;
     var csort__out;
+    var screen_width;
     // Variables----------------------
 
     // Array Generator--------------------------------------------------------------------------------------------------------------
@@ -19,7 +20,7 @@ $(document).ready(function(){
         $(".bars").remove();
         for(var i=0;i<m;i++){
             array_bars[i]=Math.floor((Math.random() * 200) + 10);
-            var w=(900-2*m)/m;
+            var w=((screen_width-5)-2*m)/m;
             $(".sortBars").after("<div id=\"b"+i+"\" class=\"bars\" style=\"height:"+array_bars[i]*2+";width:"+w+"\"></div>");
         }
     }
@@ -27,6 +28,9 @@ $(document).ready(function(){
 
 
     // Execution-------------------------
+    screen_width=screen.width/2;
+    $(".tbars").css("width",screen_width);
+    $(".tbars").css("left","25%");
     generateNewArray(number_of_bars);
     // Execution-------------------------
 
@@ -94,7 +98,7 @@ $(document).ready(function(){
 
     }
     // Bubble Sort ---------------------------------------------------------------------------------------------
-
+    // Cocktail Sort -----------------------------------------------------------------------------------------------
     function cocktailSort(){
         var j=0;
         function outerLoop(){
@@ -151,6 +155,7 @@ $(document).ready(function(){
         }
         outerLoop();
     }
+    // Cocktail Sort------------------------------------------------------------------------------------------------------------
 
 
 
