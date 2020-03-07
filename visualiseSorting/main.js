@@ -8,6 +8,8 @@ $(document).ready(function(){
     var csort_out;
     var csort__out;
     var screen_width;
+    var gaps;
+    var msort_out;
     // Variables----------------------
 
     // Array Generator--------------------------------------------------------------------------------------------------------------
@@ -19,18 +21,26 @@ $(document).ready(function(){
         number_of_bars=m;
         $(".bars").remove();
         for(var i=0;i<m;i++){
-            array_bars[i]=Math.floor((Math.random() * 200) + 10);
+            array_bars[i]=Math.floor((Math.random() * 190) + 10);
             var w=((screen_width-5)-2*m)/m;
             $(".sortBars").after("<div id=\"b"+i+"\" class=\"bars\" style=\"height:"+array_bars[i]*2+";width:"+w+"\"></div>");
         }
+        console.log(array_bars);
     }
     // Array Generator---------------------------------------------------------------------------------------------------------------
 
 
     // Execution-------------------------
     screen_width=screen.width/2;
+    var block=2*screen.width/3;
+    gaps=screen_width/screen_width;
     $(".tbars").css("width",screen_width);
     $(".tbars").css("left","25%");
+    $(".bars").css("margin-left",gaps);
+    $(".f").css("width",block);
+    $(".f").css("left","16.25%");
+    $(".h").css("width",block);
+    $(".h").css("margin-left","16.25%");
     generateNewArray(number_of_bars);
     // Execution-------------------------
 
@@ -52,6 +62,9 @@ $(document).ready(function(){
     $("#cs").click(function(){
         cocktailSort();
     });
+    $("#ms").click(function(){
+        mergeSort(0,number_of_bars-1);
+    });
     //Events : Algorithms---------------------
 
 
@@ -64,8 +77,8 @@ $(document).ready(function(){
             function myLoop () {           
                bsort_out = setTimeout(function () {
                    var f=i-1,g=i-2,h=i-3,v=number_of_bars-i;
-                    $("#b"+i).css("background-color","rgb(47, 119, 191)");
-                    $("#b"+f).css("background-color","rgb(47, 119, 191)");
+                    $("#b"+i).css("background-color","#BAFE16");
+                    $("#b"+f).css("background-color","#BAFE16");
                     // $("#b"+g).css("background-color","rgb(47, 119, 191)");
                     // $("#b"+h).css("background-color","rgb(47, 119, 191)");
                     // $("#b"+v).css("background-color","rgb(47, 119, 191)");
@@ -79,8 +92,8 @@ $(document).ready(function(){
                         array_bars[i+1]=x;
 
                     }
-                    $("#b"+i).css("background-color","red");
-                    $("#b"+id).css("background-color","green");
+                    $("#b"+i).css("background-color","green");
+                    $("#b"+id).css("background-color","red");
                     i++;                     
                     if (i < number_of_bars+1) {            
                         myLoop();              
@@ -156,8 +169,86 @@ $(document).ready(function(){
         outerLoop();
     }
     // Cocktail Sort------------------------------------------------------------------------------------------------------------
-
-
-
+    
+    function merge(l,m,r){
+        var i=0,j=0,k;
+        var n1=m-l+1;
+        var n2=r-m;
+        var L=[];
+        var R=[];
+        function copy1(){
+            if(i>=n1)
+                return;
+            L[i] = array_bars[l + i]; 
+            i++;
+            copy1();
+        }
+        copy1();
+        function copy2(){
+            if(j>=n2)
+                return;
+            R[j] = array_bars[m + 1+ j];
+            j++;
+            copy2();
+        }
+        copy2();
+        i=0;
+        j=0;
+        k=l;
+        function mg1(){
+            if(i>=n1 || j>=n2)
+                return;
+            else if (L[i] <= R[j]) 
+            { 
+                $("#b"+k).css("height",2*L[i]);
+                array_bars[k] = L[i]; 
+                i++; 
+            } 
+            else
+            { 
+                $("#b"+k).css("height",2*R[j]);
+                array_bars[k] = R[j]; 
+                j++; 
+            } 
+            k++;
+            mg1();
+        }
+        function mg2(){
+            if(i>=n1)
+                return;
+            $("#b"+k).css("height",2*L[i]);
+            array_bars[k] = L[i]; 
+            i++; 
+            k++; 
+            mg2();
+        }
+        function mg3(){
+            if(j>=n2)
+                return;
+            $("#b"+k).css("height",2*R[j]);
+            array_bars[k]=R[j];
+            j++;
+            k++;
+            mg3();
+        }
+        var funcs=[mg1,mg2,mg3];
+        var tt=0;
+        function callFuncs() {
+            funcs[tt++]();
+            if (tt < funcs.length) callFuncs();
+        }
+        callFuncs();
+    
+    }
+    
+    function mergeSort(l,r){
+        if(l<r){
+            //alert("fuck");
+            var mid=Math.floor((l+r)/2);
+            mergeSort(l,mid);
+            mergeSort(mid+1,r);
+            merge(l,mid,r);
+        }
+    }
 
 });
