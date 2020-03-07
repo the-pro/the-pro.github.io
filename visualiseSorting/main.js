@@ -10,6 +10,7 @@ $(document).ready(function(){
     var screen_width;
     var gaps;
     var msort_out;
+    var full_screen_count=0;
     // Variables----------------------
 
     // Array Generator--------------------------------------------------------------------------------------------------------------
@@ -21,7 +22,7 @@ $(document).ready(function(){
         number_of_bars=m;
         $(".bars").remove();
         for(var i=0;i<m;i++){
-            array_bars[i]=Math.floor((Math.random() * 190) + 10);
+            array_bars[i]=Math.floor((Math.random() * 180) + 10);
             var w=((screen_width-5)-2*m)/m;
             $(".sortBars").after("<div id=\"b"+i+"\" class=\"bars\" style=\"height:"+array_bars[i]*2+";width:"+w+"\"></div>");
         }
@@ -41,6 +42,7 @@ $(document).ready(function(){
     $(".f").css("left","16.25%");
     $(".h").css("width",block);
     $(".h").css("margin-left","16.25%");
+    $(".h").css("margin-top","2%");
     generateNewArray(number_of_bars);
     // Execution-------------------------
 
@@ -64,6 +66,33 @@ $(document).ready(function(){
     });
     $("#ms").click(function(){
         mergeSort(0,number_of_bars-1);
+    });
+    $("#fs").click(function(){
+    var elem = document.body;
+    if((++full_screen_count%2)){
+        $(".h").css("margin-left","0%");
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) { /* Firefox */
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE/Edge */
+            elem.msRequestFullscreen();
+        }
+    }
+    else{
+        $(".h").css("margin-left","16.25%");
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { /* Firefox */
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { /* IE/Edge */
+            document.msExitFullscreen();
+        }
+    }
     });
     //Events : Algorithms---------------------
 

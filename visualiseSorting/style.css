@@ -63,6 +63,9 @@ body{
     color:#BAFE16;
     border: 2px solid #FF4512;
 }
+.box{
+    border: 2px solid #FF4512;
+}
 
 #vr{
     width:1px;
