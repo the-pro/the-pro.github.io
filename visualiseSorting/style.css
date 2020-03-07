@@ -8,6 +8,8 @@ body{
     padding: 10px;
     /* background-color: rgb(199, 195, 195); */
     background-color:#000000;
+    margin-top:8px;
+    padding-top: 10px;
 }
 .bars{
     float:left;
@@ -23,7 +25,6 @@ body{
 }
 .tbars{
     position: absolute;
-    left:18%;
 }
 
 .f{
@@ -62,6 +63,7 @@ body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:#BAFE16;
     border: 2px solid #FF4512;
+    position: absolute;
 }
 .box{
     border: 2px solid #FF4512;
@@ -69,7 +71,7 @@ body{
 
 #vr{
     width:1px;
-    background-color: rgb(197, 23, 231);
+    background-color: #FF4512;
     height:44px;
     padding:0px;
 }

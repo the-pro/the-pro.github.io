@@ -38,11 +38,12 @@ $(document).ready(function(){
     $(".tbars").css("width",screen_width);
     $(".tbars").css("left","25%");
     $(".bars").css("margin-left",gaps);
-    $(".f").css("width",block);
     $(".f").css("left","16.25%");
+    $(".f").css("width",block);
+    $(".h").css("left","16.25%");
     $(".h").css("width",block);
-    $(".h").css("margin-left","16.25%");
-    $(".h").css("margin-top","2%");
+    var bar_position=+$(".h").height()+18+4;
+    $(".tbars").css("top",bar_position);
     generateNewArray(number_of_bars);
     // Execution-------------------------
 
@@ -70,7 +71,6 @@ $(document).ready(function(){
     $("#fs").click(function(){
     var elem = document.body;
     if((++full_screen_count%2)){
-        $(".h").css("margin-left","0%");
         if (elem.requestFullscreen) {
             elem.requestFullscreen();
         } else if (elem.mozRequestFullScreen) { /* Firefox */
@@ -82,7 +82,6 @@ $(document).ready(function(){
         }
     }
     else{
-        $(".h").css("margin-left","16.25%");
         if (document.exitFullscreen) {
             document.exitFullscreen();
         } else if (document.mozCancelFullScreen) { /* Firefox */
