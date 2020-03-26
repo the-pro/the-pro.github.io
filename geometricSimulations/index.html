@@ -1,0 +1,36 @@
+<!DOCKTYPE html>
+<html>
+    <link rel="stylesheet" href="style.css">
+    <body>
+        <div id="h">
+            <!-- <h1>Convex Hull Generator</h1> -->
+            <div>
+                <div class="bt" style="width: 25%;">
+                    <select id="select">
+                        <option value=''>Select Algorithm<option>
+                        <option value='Graham Scan'>Graham Scan</option>
+                        <option value='Gift Wrapping'>Gift Wrapping</option>
+                    </select>
+                </div>
+                <div class="bt" id="clear" style="width: 25%;">Clear Space</div>
+                <!-- <div class="bt" id="solve" style="width: 50%;">Simulate</div> -->
+                <div class="bt" style="width: 25%;" id='p'>ClearRedLines</div>
+                <div class='bt' style="width: 25%;">
+                    <div id="inf">x-coordinate:-1 y-coordinate:-1</div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        <div id="main">
+            <svg height="5000" width="5000" id="f">
+            </svg>
+        </div>
+        <br>
+        <div>
+            <button type="submit" id="solve">Simulate</button>
+        </div>
+        <script type="text/javascript" src="setup.js"></script>
+        <script type="text/javascript" src="simulate.js"></script>
+        <script type="text/javascript" src="giftWrapping.js"></script>
+    </body>
+</html>

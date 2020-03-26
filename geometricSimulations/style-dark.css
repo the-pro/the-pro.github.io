@@ -1,0 +1,75 @@
+body{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: black;
+}
+#h{
+    width:100%;
+    position:relative;
+    top:2%;
+    /* left:10%; */
+    /* border-bottom:2px solid black; */
+    color:black;
+    /* background-color:rgb(156, 73, 233) ; */
+    /* padding:20px; */
+}
+#main{
+    width:100%;
+    height:80%;
+    position:relative;
+    /* left:10%; */
+    border:2px solid rgb(8, 239, 255);
+    /* background-color: black; */
+}
+#l1{
+    stroke:rgb(13, 248, 4);
+    stroke-width: 1;
+}
+#l2{
+    stroke:rgba(245, 23, 7, 1);
+    stroke-width: 2;
+}
+#l2:hover{
+    stroke:rgb(0, 25, 252);
+}
+circle{
+    stroke-width: 1;
+    stroke:blue;
+    fill:blue;
+}
+.bt{
+    float:left;
+    color:rgb(8, 239, 255);
+    font-size: large;
+}
+.bt:hover{
+    color:rgb(13, 248, 4);
+}
+select{
+    border: none;
+    font-size: large;
+    color:rgb(8, 239, 255);
+    background-color:black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+option{
+    border: none;
+}
+button{
+    width:100%;
+    font-size: x-large;
+    border:2px solid black;
+    background-color: rgb(13, 248, 4);
+    padding:10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#inf{
+    color:rgb(13, 248, 4);
+    text-align: start;
+    font-size: large;
+}
+#p{
+    color:rgb(13, 248, 4);
+    /* text-align: start; */
+    font-size: large;
+}
