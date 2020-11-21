@@ -1,42 +1,51 @@
 body{
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: White;
+    background-color: #4f5d75;
     /* border:2px solid rgb(48, 53, 53); */
+    color:white;
 }
 #h{
-    width:100%;
+    width:80%;
     position:relative;
+    left:10%;
     top:2%;
     /* left:10%; */
     /* border-bottom:2px solid black; */
-    color:black;
+    color:white;
     /* background-color:rgb(156, 73, 233) ; */
     /* padding:20px; */
 }
-#main{
-    width:100%;
+#mainx{
+    width:80%;
     height:80%;
     position:relative;
-    /* left:10%; */
-    border:2px solid rgb(8, 226, 255);
-    /* background-color: black; */
+    left:0%;
+    border:2px solid white;
+    background-color:#4f5d75;
+}
+#main{
+    width:79%;
+    height:80%;
+    position:relative;
+    left:10%;
+    background-color:#4f5d75;
 }
 #l1{
-    stroke:rgb(8, 226, 255);
+    stroke:black;
     stroke-width: 1;
 }
 #l2{
     stroke:rgba(245, 23, 7, 1);
-    stroke-width: 2;
+    stroke-width: 4;
 }
 #l2:hover{
     stroke:rgb(0, 25, 252);
 }
 circle{
-    stroke-width: 1;
-    stroke:blue;
-    fill:blue;
+    stroke-width: 7;
+    stroke:#ffca3a;
+    fill:#ffca3a;
 }
 .bt{
     float:left;
@@ -57,19 +66,43 @@ option{
     border: none;
 }
 button{
-    width:100%;
-    font-size: x-large;
-    border:2px solid blue;
+    width:29%;
+    margin-left: 1%;
+    position: relative;
+    right:20%;
+    font-size: large;
+    /* border:2px solid blue; */
     /* background-color: rgb(13, 248, 4); */
-    background-color: rgb(48, 53, 53);
-    color: white;
-    padding:10px;
+    background-color: white;
+    color:#4f5d75;
+    padding-top:5px;
+    padding-bottom: 5px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-color: white;
+    float:right;
+}
+button:hover{
+    background-color:#4f5d75;
+    color:white;
+
 }
 #inf{
-    color:rgb(250, 3, 15);
+    color:white;
     text-align: start;
     font-size: large;
+}
+#opt{
+    position: relative;
+    margin-left: 81%;
+    /* text-align: left; */
+    width:18%;
+    height:80%;
+    border: 2px solid black;
+    background-color:rgb(149, 172, 226);
+    overflow: scroll;
+}
+#points{
+
 }
 #p{
     font-size: large;
